@@ -1,0 +1,32 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+	"bcrypt": "~0.8.5",
+    "koa": "^2.0.0-alpha.2",
+    "mongoose": "^4.2.3",
+	"react": "^0.14.0",
+    "react-document-meta": "2.0.0",
+    "react-dom": "0.14.1",
+    "react-inline-css": "2.0.0",
+    "react-redux": "^4.0.0",
+    "react-router": "1.0.0-rc3",
+    "redux": "3.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devWayne/Matrix.git"
+  },
+  "author": "Jarvan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devWayne/Matrix/issues"
+  },
+  "homepage": "https://github.com/devWayne/Matrix#readme"
+}
