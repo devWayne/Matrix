@@ -4,16 +4,14 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-	"bcrypt": "~0.8.5",
-    "koa": "^2.0.0-alpha.2",
-    "mongoose": "^4.2.3",
-	"react": "^0.14.0",
-    "react-document-meta": "2.0.0",
-    "react-dom": "0.14.1",
-    "react-inline-css": "2.0.0",
-    "react-redux": "^4.0.0",
-    "react-router": "1.0.0-rc3",
-    "redux": "3.0.4"
+    "co": "^4.6.0",
+    "ejs": "^2.3.4",
+    "koa": "^2.0.0-alpha.3",
+    "koa-convert": "^1.2.0",
+    "koa-logger": "^2.0.0",
+    "koa-router": "^7.0.0",
+    "koa-session": "^3.3.1",
+    "koa-views": "^3.1.0"
   },
   "devDependencies": {},
   "scripts": {

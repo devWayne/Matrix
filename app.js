@@ -1,20 +1,30 @@
 const Koa = require('koa');
-const app = new Koa();
+const app = new Koa(); 
+const co = require('co');
+const views = require('koa-views');
+const convert = require('koa-convert');
 
-// logger
+router = require('./route');
 
-app.use((ctx, next) => {
+
+app.use(convert(views('views', {
+  map: {
+    html: 'ejs'
+  }
+})));
+
+app.use(co.wrap(function *(ctx, next){
   const start = new Date;
-  return next().then(() => {
-    const ms = new Date - start;
-    console.log(`${ctx.method} ${ctx.url} - ${ms}`);
-  });
+  yield next();
+  const ms = new Date - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+}));
+
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
+
+app.listen(6900,()=>{
+    console.info('listen at 6900');
 });
-
-// response
-
-app.use(ctx => {
-  ctx.body = 'Hello World';
-});
-
-app.listen(3000);
