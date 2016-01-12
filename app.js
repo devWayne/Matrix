@@ -1,18 +1,34 @@
 const Koa = require('koa');
 const app = new Koa(); 
 const co = require('co');
-const views = require('koa-views');
 const convert = require('koa-convert');
 
-router = require('./route');
+const path = require('path');
 
 
-app.use(convert(views('views', {
-  map: {
-    html: 'ejs'
-  }
-})));
 
+/**
+ * static serve
+ */
+const serve = require('koa-static');
+app.use(convert(serve(__dirname + '/static')));
+
+
+/**
+ * render config
+ */
+const render = require('koa-ejs');
+render(app, {
+  root: path.join(__dirname, 'views'),
+  layout: 'layout',
+  viewExt: 'html',
+  cache: false,
+  debug: true
+});
+
+/**
+ *  logger
+ */
 app.use(co.wrap(function *(ctx, next){
   const start = new Date;
   yield next();
@@ -21,6 +37,10 @@ app.use(co.wrap(function *(ctx, next){
 }));
 
 
+/**
+ *  router
+ */
+router = require('./route');
 app
   .use(router.routes())
   .use(router.allowedMethods());
