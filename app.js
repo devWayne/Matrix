@@ -1,11 +1,12 @@
 const Koa = require('koa');
-const app = new Koa(); 
 const co = require('co');
 const convert = require('koa-convert');
-
+const bodyParser = require('koa-bodyparser');
 const path = require('path');
 
 
+const app = new Koa(); 
+app.use(bodyParser());
 
 /**
  * static serve
