@@ -31,6 +31,12 @@ node_modules
 *.swo
 .DS_Store
 
+# lib
 static/lib
+
+
 components
 pages
+
+# password
+config.js

@@ -15,7 +15,8 @@
     "koa-router": "^7.0.0",
     "koa-session": "^3.3.1",
     "koa-static": "^2.0.0",
-    "koa-views": "^3.1.0"
+    "koa-views": "^3.1.0",
+    "ssh2": "^0.4.13"
   },
   "devDependencies": {},
   "scripts": {
